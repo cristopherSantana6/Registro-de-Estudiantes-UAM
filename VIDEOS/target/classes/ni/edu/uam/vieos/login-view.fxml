@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ni.edu.uam.vieos.controlers.LoginController"
+      alignment="CENTER" spacing="16" prefWidth="430" prefHeight="620"
+      style="-fx-background-color: #f4f7fa;">
+    <padding>
+        <Insets top="35" right="45" bottom="35" left="45"/>
+    </padding>
+
+    <ImageView fitWidth="300" fitHeight="110" preserveRatio="true">
+        <image>
+            <Image url="@videos-logo.png" preserveRatio="true"/>
+        </image>
+    </ImageView>
+
+    <Label text="Bienvenido a VIDEOS"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1f2937;"/>
+    <Label text="Inicia sesión para continuar"
+           style="-fx-font-size: 14px; -fx-text-fill: #6b7280;"/>
+
+    <VBox spacing="7" maxWidth="330">
+        <Label text="Usuario" style="-fx-font-weight: bold; -fx-text-fill: #374151;"/>
+        <TextField fx:id="txtUsuario" promptText="Ingresa tu usuario"
+                   onAction="#iniciarSesion" prefHeight="42"/>
+
+        <Label text="Contraseña" style="-fx-font-weight: bold; -fx-text-fill: #374151;"/>
+        <PasswordField fx:id="txtClave" promptText="Ingresa tu contraseña"
+                       onAction="#iniciarSesion" prefHeight="42"/>
+    </VBox>
+
+    <Label fx:id="lblError" text="" wrapText="true" maxWidth="330"
+           style="-fx-text-fill: #dc2626; -fx-font-size: 13px;"/>
+
+    <Button text="Iniciar sesión" onAction="#iniciarSesion" defaultButton="true"
+            prefWidth="330" prefHeight="45"
+            style="-fx-background-color: #0f8fa3; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold;"/>
+    <Button text="Limpiar" onAction="#limpiarLogin"
+            prefWidth="330" prefHeight="40"
+            style="-fx-background-color: transparent; -fx-border-color: #cbd5e1; -fx-border-radius: 5; -fx-text-fill: #475569;"/>
+
+    <Label text="Usuario demo: admin  |  Contraseña: 1234"
+           style="-fx-font-size: 11px; -fx-text-fill: #94a3b8;"/>
+</VBox>
